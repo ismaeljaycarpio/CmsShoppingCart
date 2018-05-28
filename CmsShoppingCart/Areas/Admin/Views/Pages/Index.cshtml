@@ -43,11 +43,23 @@ else
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "EditPage", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "PageDetails", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "DeletePage", new { id = item.Id })
+                    @Html.ActionLink("Delete", "DeletePage", new { id = item.Id }, new { @class = "delete" })
                 </td>
             </tr>
         }
 
     </table>
+}
+
+@section Scripts{
+    
+    <script>
+        $(function () {
+            $("a.delete").click(function () {
+                if (!confirm("confirm delete?"))
+                    return false;
+            });
+        });
+    </script>
+    
 }
