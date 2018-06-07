@@ -16,7 +16,7 @@
 }
 else
 {
-    <table class="table">
+    <table class="table sorting">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Title)
@@ -53,10 +53,12 @@ else
 
 @section Scripts{
     
+    @Scripts.Render("~/bundles/jquery-ui")
+
     <script>
         $(function () {
             $("a.delete").click(function () {
-                if (!confirm("confirm delete?"))
+                if (!confirm("confirm delete ?"))
                     return false;
             });
         });

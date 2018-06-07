@@ -175,7 +175,8 @@ namespace CmsShoppingCart.Areas.Admin.Controllers
             return RedirectToAction("EditPage", new { Id = id});
         }
 
-        // GET: admin/pages/DeletePage/id
+        // POST: admin/pages/DeletePage/id
+        [HttpPost]
         public ActionResult DeletePage(int id)
         {
             // db
